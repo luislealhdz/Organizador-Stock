@@ -1,0 +1,30 @@
+# Exclude compiled Java classes
+*.class
+
+# Exclude JAR files
+*.jar
+
+# Exclude IDE-specific files and folders
+.idea/
+*.iml
+*.ipr
+*.iws
+nbproject/
+build/
+nbactions.xml
+.project
+.classpath
+.settings/
+
+# Exclude NetBeans private folder
+src/private/
+
+# Exclude system-specific files
+.DS_Store
+
+# Exclude generated files
+build.xml
+manifest.mf
+
+# Exclude test folder
+test/

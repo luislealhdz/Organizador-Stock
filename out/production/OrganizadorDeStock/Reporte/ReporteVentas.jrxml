@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteVentas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42fd7981-b95e-4268-a650-7a1746a608ad">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     report.`idreport` AS report_idreport,
+     report.`Code` AS report_Code,
+     report.`Name` AS report_Name,
+     report.`Cost` AS report_Cost,
+     report.`QuantityToBuy` AS report_QuantityToBuy,
+     report.`Total` AS report_Total,
+     report.`DateToBuy` AS report_DateToBuy,
+     report.`Category` AS report_Category
+FROM
+     `report` report]]>
+	</queryString>
+	<field name="report_idreport" class="java.lang.Integer"/>
+	<field name="report_Code" class="java.lang.String"/>
+	<field name="report_Name" class="java.lang.String"/>
+	<field name="report_Cost" class="java.math.BigDecimal"/>
+	<field name="report_QuantityToBuy" class="java.lang.Integer"/>
+	<field name="report_Total" class="java.math.BigDecimal"/>
+	<field name="report_DateToBuy" class="java.sql.Date"/>
+	<field name="report_Category" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="-3" width="233" height="82" uuid="8a64c6ca-d2e2-4b02-872c-0305b679a8f0"/>
+				<imageExpression><![CDATA["C:\\Users\\edgar\\OneDrive\\Documentos\\NetBeansProjects\\OrganizadorDeStock\\src\\Imagenes\\Stock.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="f3eb5404-68bf-4412-8d13-c9a1e3f67965"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="43" height="20" uuid="e8676e10-1518-42da-81ba-56605a373750"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="0" width="124" height="20" uuid="9965220c-8485-41c6-b721-2d0ed16e2234"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="0" width="52" height="20" uuid="edd68aa1-a54d-4939-a477-501011c700e2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="0" width="78" height="20" uuid="6b2d759b-dbee-4123-9478-862c35780586"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[QuantityToBuy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="40" height="20" uuid="41dcd17e-f9d9-49da-9ff2-167b99b45034"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="0" width="54" height="20" uuid="0fa3f045-de91-4741-8c03-7e3223ec33fd"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[DateToBuy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="0" width="130" height="20" uuid="adc17319-baee-4a76-835c-cb4ee3fc3367"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="0" width="43" height="20" uuid="db5bd143-af5c-4fc9-ad15-0043472434e7"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_Code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="0" width="124" height="20" uuid="2ace2e32-2896-44c0-9c2c-59aa461edeb6"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="0" width="52" height="20" uuid="2abf2624-0949-4207-81d5-c299243448d0"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_Cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="0" width="78" height="20" uuid="ded35b17-2c26-41f1-b663-7ae05932b60e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_QuantityToBuy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="40" height="20" uuid="ee811c30-770f-4498-a99f-11769bc54ed6"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="514" y="0" width="41" height="20" uuid="f0feb85a-d378-4567-9f13-64b7ad69530e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{report_DateToBuy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="0" width="130" height="20" uuid="b3cf3d6c-862e-4f8a-bfba-1670c172b0c6"/>
+				<textFieldExpression><![CDATA[$F{report_Category}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="196" y="14" width="80" height="20" uuid="70bd4712-500c-4b43-8f0c-18f8f37a4b68"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="276" y="14" width="40" height="20" uuid="7720c8e8-78ef-43a8-a762-e1cdf1833737"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
